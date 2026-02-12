@@ -1,4 +1,25 @@
-import { useState, useCallback, useEffect, useRef } from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zuvo — Financial Toolkit</title>
+  <meta name="description" content="Free financial calculator, market analysis, and education toolkit. Budget, invest, plan military finances, and learn — all in one app.">
+  <meta name="theme-color" content="#1a1a1e">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💰</text></svg>">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    #root { min-height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+  <script type="text/babel">
+    const { useState, useCallback, useEffect, useRef } = React;
 
 // ===================== THEMES =====================
 const THEMES = {
@@ -1820,7 +1841,7 @@ function InvestmentCalc({t}){
 }
 
 // ===================== MAIN APP =====================
-export default function App(){
+function App(){
   const[themeName,setThemeName]=useState("graphite");
   const[activeTab,setActiveTab]=useState("business");
   const[activeCalc,setActiveCalc]=useState("profit_margin");
@@ -2133,3 +2154,9 @@ export default function App(){
     </div>
   );
 }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
